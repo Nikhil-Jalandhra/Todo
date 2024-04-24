@@ -10,9 +10,14 @@ function AddTodo() {
     const [text, setText] = useState("");
 
     const handelSubmit = (e) =>{
+      if (text !== "") { 
         e.preventDefault()
         console.log("hlo")
         dispatch(addTodo(text))
+        setText("")
+      }else{
+        alert("Please Enter Something")
+      }
     }
 
     
