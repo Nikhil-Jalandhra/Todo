@@ -13,6 +13,7 @@ export const todoreducer = createSlice({
                     Id: nanoid(),
                     Text: action.payload
                 }
+                localStorage.setItem(todo.Id, todo.Text)
                 state.todos.push(todo)
             },
             deleteTodo: (state,action)=>{
