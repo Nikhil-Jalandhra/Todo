@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteTodo } from '../Slice/slice'
+import { MdDeleteSweep } from "react-icons/md";
 
 
 function Todos() {
@@ -8,17 +9,18 @@ function Todos() {
     const todos = useSelector(state => state.todos)
     const dispatch = useDispatch()
 
-    const deltodo = (e) => {
-      console.log(e.target.value)
-      dispatch(deleteTodo(e.target.value))
-    }
 
   return (
     <div>
-      {todos.map((todo,index)=>(
-        <div key={index} className=' flex bg-black text-white w-[200px]'>
-        <h1 >{todo.Text}</h1>
-        <button value={todo.Id} onClick={deltodo} className=' ms-7'>Del</button>
+      {todos.map((todo)=>(
+        <div key={todo.Id} className='w-full flex rounded-2xl bg-white mt-[20px] py-[10px] px-[15px] text-[17px]'>
+          <div className=' w-full overflow-hidden'>
+          <h1 className=' whitespace-nowrap' >{todo.Text}</h1>
+          </div>
+          <button
+          onClick={()=>(dispatch(deleteTodo(todo.Id)))} 
+          className=' text-[27px] hover:text-red-600 bg-orange-500'
+          ><MdDeleteSweep /></button>
         </div>
       ))}
     </div>
