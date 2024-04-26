@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteTodo } from '../Slice/slice'
 import { MdDeleteSweep } from "react-icons/md";
+import { TbEdit } from "react-icons/tb";
 
 
 function Todos() {
@@ -13,13 +14,17 @@ function Todos() {
   return (
     <div>
       {todos.map((todo)=>(
-        <div key={todo.Id} className='w-full flex rounded-2xl bg-white mt-[20px] py-[10px] px-[15px] text-[17px]'>
-          <div className=' w-full overflow-hidden'>
-          <h1 className=' whitespace-nowrap' >{todo.Text}</h1>
+        <div key={todo.Id} className='w-full inline-flex rounded-2xl bg-amber-400 mt-[20px] py-[10px] px-[15px] text-[17px]'>
+          <input type="checkbox" className=' mr-[5px] w-[25px]' />
+          <div className='w-full text-justify rounded-lg px-[15px] py-[10px] bg-white mr-[10px]'>
+          <h1 className='' >{todo.Text}</h1>
           </div>
+          <button 
+          className=' text-[30px] pr-[5px] hover:text-blue-600'
+          ><TbEdit /></button>
           <button
           onClick={()=>(dispatch(deleteTodo(todo.Id)))} 
-          className=' text-[27px] hover:text-red-600 bg-orange-500'
+          className=' text-[30px] pr-[5px] hover:text-red-600'
           ><MdDeleteSweep /></button>
         </div>
       ))}
