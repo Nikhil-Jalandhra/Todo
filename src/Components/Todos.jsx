@@ -68,7 +68,7 @@ function Todos() {
     <div className="w-full pb-[200px] min-h-screen bg-zinc-400 flex flex-col items-center">
       <div className=" lg:w-[600px] w-[350px] px-2 py-[20px] mt-[50px] rounded-xl">
         <div className=' w-full justify-center items-center flex lg:text-[50px] text-[30px] mb-[10px]'>
-        <h1 className='font-bold'>Manage Your Todo</h1>
+        <h1 className='font-bold text-black'>Manage Your Todo</h1>
         <span className='lg:ml-[15px] ml-[10px] text-[#0D009F] '><FaFeatherAlt /></span> 
         </div>
           <form onSubmit={handelSubmit} >
