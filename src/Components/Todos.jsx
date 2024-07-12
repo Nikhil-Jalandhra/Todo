@@ -41,7 +41,7 @@ function Todos() {
         setTextCounter(clickedTodo.Text.length)
       }   
     }
-
+    
     useEffect(() => {
       editRef.current.focus()
     }, [getTodo]);
